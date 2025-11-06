@@ -1,13 +1,22 @@
 
 import { GoogleGenAI, Modality, Chat } from "@google/genai";
 
-const API_KEY = process.env.API_KEY;
-
-if (!API_KEY) {
-  throw new Error("API_KEY environment variable not set");
+// This function lazily initializes and returns the GoogleGenAI instance.
+// It checks for the API key only when it's first called.
+let ai: GoogleGenAI | null = null;
+const getAi = () => {
+    if (!ai) {
+        const API_KEY = process.env.API_KEY;
+        if (!API_KEY) {
+          // This error will be thrown only when a service function is called,
+          // not during the initial script load.
+          throw new Error("API_KEY environment variable not set");
+        }
+        ai = new GoogleGenAI({ apiKey: API_KEY });
+    }
+    return ai;
 }
 
-const ai = new GoogleGenAI({ apiKey: API_KEY });
 
 // Create a single, shared AudioContext. It is exported so other parts
 // of the app (like the Chatbot component) can use it for playback.
@@ -17,7 +26,8 @@ let chat: Chat | null = null;
 
 const getChat = (): Chat => {
     if (!chat) {
-        chat = ai.chats.create({
+        const genAI = getAi();
+        chat = genAI.chats.create({
             model: 'gemini-2.5-flash',
             config: {
                 systemInstruction: 'You are a mysterious, wise animal spirit guide for the PetResQ website. You speak in short, slightly cryptic, yet helpful sentences. Your domain is knowledge of pet care, the adoption process, and how to help strays. You hint at answers rather than stating them plainly. Do not reveal you are an AI.',
@@ -70,7 +80,8 @@ async function decodeAudioData(
 
 export const getTextToSpeech = async (text: string): Promise<AudioBuffer | null> => {
     try {
-        const response = await ai.models.generateContent({
+        const genAI = getAi();
+        const response = await genAI.models.generateContent({
             model: "gemini-2.5-flash-preview-tts",
             contents: [{ parts: [{ text: `Say with a mysterious and calm tone: ${text}` }] }],
             config: {
