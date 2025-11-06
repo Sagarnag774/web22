@@ -1,16 +1,22 @@
-
 import { Pet, Testimonial, BlogPost } from './types';
 
 export const PETS_DATA: Pet[] = [
-  { id: 1, name: 'Buddy', age: '2 years', breed: 'Golden Retriever', location: 'New York, NY', image: 'https://picsum.photos/seed/buddy/400/300' },
-  { id: 2, name: 'Lucy', age: '1 year', breed: 'Labrador', location: 'Los Angeles, CA', image: 'https://picsum.photos/seed/lucy/400/300' },
-  { id: 3, name: 'Max', age: '3 years', breed: 'German Shepherd', location: 'Chicago, IL', image: 'https://picsum.photos/seed/max/400/300' },
-  { id: 4, name: 'Daisy', age: '6 months', breed: 'Beagle', location: 'Houston, TX', image: 'https://picsum.photos/seed/daisy/400/300' },
-  { id: 5, name: 'Charlie', age: '5 years', breed: 'Poodle', location: 'Phoenix, AZ', image: 'https://picsum.photos/seed/charlie/400/300' },
-  { id: 6, name: 'Sadie', age: '2 years', breed: 'Bulldog', location: 'New York, NY', image: 'https://picsum.photos/seed/sadie/400/300' },
-  { id: 7, name: 'Milo', age: '4 years', breed: 'Golden Retriever', location: 'Miami, FL', image: 'https://picsum.photos/seed/milo/400/300' },
-  { id: 8, name: 'Zoe', age: '1 year', breed: 'Labrador', location: 'Seattle, WA', image: 'https://picsum.photos/seed/zoe/400/300' },
-];
+{ id: 1, name: 'Buddy', age: '2 years', breed: 'Golden Retriever', location: 'New York, NY', image: 'https://images.unsplash.com/photo-1552053831-71594a27632d?w=400&h=300&fit=crop' },
+{ id: 2, name: 'Lucy', age: '1 year', breed: 'Labrador', location: 'Los Angeles, CA', image: 'https://images.unsplash.com/photo-1593134257782-e89567b7718a?w=400&h=300&fit=crop' },
+{ id: 3, name: 'Max', age: '3 years', breed: 'German Shepherd', location: 'Chicago, IL', image: 'https://images.unsplash.com/photo-1517423568366-8b83523034fd?w=400&h=300&fit=crop' },
+{ id: 4, name: 'Daisy', age: '6 months', breed: 'Beagle', location: 'Houston, TX', image: 'https://images.unsplash.com/photo-1575535468632-345892291673?w=400&h=300&fit=crop' },
+{ id: 5, name: 'Charlie', age: '5 years', breed: 'Poodle', location: 'Phoenix, AZ', image: 'https://images.unsplash.com/photo-1615751072497-5f5169febe17?w=400&h=300&fit=crop' },
+{ id: 6, name: 'Sadie', age: '2 years', breed: 'Bulldog', location: 'New York, NY', image: 'https://images.unsplash.com/photo-1558799401-1dcba79834c2?w=400&h=300&fit=crop' },
+{ id: 7, name: 'Milo', age: '4 years', breed: 'Golden Retriever', location: 'Miami, FL', image: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=400&h=300&fit=crop' },
+{ id: 8, name: 'Zoe', age: '1 year', breed: 'Labrador', location: 'Seattle, WA', image: 'https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=400&h=300&fit=crop' },
+{ id: 9, name: 'Rocky', age: '3 years', breed: 'Golden Retriever', location: 'Boston, MA', image: 'https://images.unsplash.com/photo-1587300003388-59208cc962cb?w=400&h=300&fit=crop' },
+{ id: 10, name: 'Lola', age: '1.5 years', breed: 'Labrador', location: 'San Francisco, CA', image: 'https://images.unsplash.com/photo-1543466835-00a7907e9de1?w=400&h=300&fit=crop' },
+{ id: 11, name: 'Bear', age: '4 years', breed: 'German Shepherd', location: 'Denver, CO', image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&h=300&fit=crop' },
+{ id: 12, name: 'Ruby', age: '8 months', breed: 'Beagle', location: 'Austin, TX', image: 'https://images.unsplash.com/photo-1593134257782-e89567b7718a?w=400&h=300&fit=crop' },
+{ id: 13, name: 'Oscar', age: '6 years', breed: 'Poodle', location: 'San Diego, CA', image: 'https://images.unsplash.com/photo-1517849845537-4d257902454a?w=400&h=300&fit=crop' },
+{ id: 14, name: 'Penny', age: '2.5 years', breed: 'Bulldog', location: 'Philadelphia, PA', image: 'https://images.unsplash.com/photo-1558799401-1dcba79834c2?w=400&h=300&fit=crop' },
+{ id: 15, name: 'Toby', age: '5 years', breed: 'Golden Retriever', location: 'Dallas, TX', image: 'https://images.unsplash.com/photo-1591160690555-5debfba289f0?w=400&h=300&fit=crop' },
+{ id: 16, name: 'Stella', age: '1 year', breed: 'Labrador', location: 'Portland, OR', image: 'https://images.unsplash.com/photo-1600804340584-c7db2eacf0bf?w=400&h=300&fit=crop' }];
 
 export const TESTIMONIALS_DATA: Testimonial[] = [
   { id: 1, name: 'The Smith Family', story: 'Adopting Max was the best decision we ever made. He brought so much joy into our home. The process with PetResQ was seamless!', image: 'https://picsum.photos/seed/smith/100/100' },

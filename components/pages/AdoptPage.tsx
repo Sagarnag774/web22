@@ -57,22 +57,22 @@ const AdoptPage: React.FC = () => {
         <div className="bg-white p-6 rounded-lg shadow-md mb-8 grid grid-cols-1 md:grid-cols-3 gap-4">
           <div>
             <label htmlFor="breed" className="block text-sm font-medium text-gray-700">Breed</label>
-            <select id="breed" name="breed" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
-              {breeds.map(b => <option key={b} value={b}>{b === 'all' ? 'All Breeds' : b}</option>)}
+            <select id="breed" name="breed" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
+              {breeds.map(b => <option key={b} value={b} className="bg-gray-700 text-white">{b === 'all' ? 'All Breeds' : b}</option>)}
             </select>
           </div>
           <div>
             <label htmlFor="location" className="block text-sm font-medium text-gray-700">Location</label>
-            <select id="location" name="location" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
-              {locations.map(l => <option key={l} value={l}>{l === 'all' ? 'All Locations' : l}</option>)}
+            <select id="location" name="location" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
+              {locations.map(l => <option key={l} value={l} className="bg-gray-700 text-white">{l === 'all' ? 'All Locations' : l}</option>)}
             </select>
           </div>
           <div>
             <label htmlFor="age" className="block text-sm font-medium text-gray-700">Age</label>
-            <select id="age" name="age" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base border-gray-300 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
-              <option value="all">All Ages</option>
-              <option value="puppy">Puppy / Kitten (Under 1yr)</option>
-              <option value="adult">Adult</option>
+            <select id="age" name="age" onChange={handleFilterChange} className="mt-1 block w-full pl-3 pr-10 py-2 text-base bg-gray-700 text-white border-gray-600 focus:outline-none focus:ring-teal focus:border-teal sm:text-sm rounded-md">
+              <option value="all" className="bg-gray-700 text-white">All Ages</option>
+              <option value="puppy" className="bg-gray-700 text-white">Puppy / Kitten (Under 1yr)</option>
+              <option value="adult" className="bg-gray-700 text-white">Adult</option>
             </select>
           </div>
         </div>
@@ -101,19 +101,20 @@ const AdoptPage: React.FC = () => {
             <div className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                <input type="text" id="name" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
+                <input type="text" id="name" required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                <input type="email" id="email" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
+                <input type="email" id="email" required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
               </div>
               <div>
                 <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Phone</label>
-                <input type="tel" id="phone" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
+
+                <input type="tel" id="phone" required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
               </div>
               <div>
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">Short Message (Why do you want to adopt?)</label>
-                <textarea id="message" rows={3} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"></textarea>
+                <textarea id="message" rows={3} required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"></textarea>
               </div>
               <button type="submit" className="w-full bg-soft-orange text-gray-800 font-bold py-3 px-4 rounded-full hover:bg-opacity-90 transition-colors duration-300">Submit Adoption Request</button>
             </div>

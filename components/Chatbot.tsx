@@ -116,7 +116,7 @@ const Chatbot: React.FC = () => {
                             value={input}
                             onChange={(e) => setInput(e.target.value)}
                             placeholder="Ask a question..."
-                            className="flex-1 px-3 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-teal"
+                            className="flex-1 px-3 py-2 bg-gray-700 text-white placeholder-gray-400 border border-gray-600 rounded-full focus:outline-none focus:ring-2 focus:ring-teal"
                             disabled={isLoading}
                         />
                         <button type="submit" className="bg-teal text-white rounded-full p-2 hover:bg-dark-teal transition-colors disabled:bg-gray-400" disabled={isLoading || !input.trim()}>

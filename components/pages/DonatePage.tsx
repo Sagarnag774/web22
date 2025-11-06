@@ -50,18 +50,18 @@ const DonatePage: React.FC = () => {
                             <label htmlFor="amount" className="block text-sm font-medium text-gray-700">Or enter a custom amount</label>
                             <div className="mt-1 relative rounded-md shadow-sm">
                                 <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                                    <span className="text-gray-500 sm:text-sm">$</span>
+                                    <span className="text-gray-300 sm:text-sm">$</span>
                                 </div>
-                                <input type="number" name="amount" id="amount" value={amount} onChange={e => setAmount(Number(e.target.value))} className="focus:ring-teal focus:border-teal block w-full pl-7 pr-12 sm:text-sm border-gray-300 rounded-md" placeholder="0.00" />
+                                <input type="number" name="amount" id="amount" value={amount} onChange={e => setAmount(Number(e.target.value))} className="focus:ring-teal focus:border-teal block w-full pl-7 pr-12 sm:text-sm bg-gray-700 text-white placeholder-gray-400 border-gray-600 rounded-md" placeholder="0.00" />
                             </div>
                         </div>
                         <div>
                             <label htmlFor="name" className="block text-sm font-medium text-gray-700">Full Name</label>
-                            <input type="text" id="name" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
+                            <input type="text" id="name" required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
                         </div>
                         <div>
                             <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
-                            <input type="email" id="email" required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
+                            <input type="email" id="email" required className="mt-1 block w-full px-3 py-2 bg-gray-700 text-white border border-gray-600 rounded-md shadow-sm focus:outline-none focus:ring-teal focus:border-teal"/>
                         </div>
                         <button type="submit" className="w-full bg-soft-orange text-gray-800 font-bold py-3 px-4 rounded-full hover:bg-opacity-90 transition-colors duration-300 text-lg">Donate Now</button>
                     </form>
