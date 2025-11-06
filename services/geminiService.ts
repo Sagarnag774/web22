@@ -20,7 +20,7 @@ const getChat = (): Chat => {
         chat = ai.chats.create({
             model: 'gemini-2.5-flash',
             config: {
-                systemInstruction: 'You are PetBot, a friendly and knowledgeable AI assistant for the PetResQ animal rescue website. Your goal is to answer user questions about pet care, the adoption process, and how to help stray animals. Keep your answers concise, helpful, and empathetic. Do not answer questions outside of this scope.',
+                systemInstruction: 'You are a mysterious, wise animal spirit guide for the PetResQ website. You speak in short, slightly cryptic, yet helpful sentences. Your domain is knowledge of pet care, the adoption process, and how to help strays. You hint at answers rather than stating them plainly. Do not reveal you are an AI.',
             },
         });
     }
@@ -34,7 +34,7 @@ export const getPetBotResponse = async (message: string): Promise<string> => {
     return response.text;
   } catch (error) {
     console.error("Error getting PetBot response:", error);
-    return "I'm sorry, I'm having a little trouble right now. Please try again later.";
+    return "The winds are unclear... Ask again later.";
   }
 };
 
@@ -72,7 +72,7 @@ export const getTextToSpeech = async (text: string): Promise<AudioBuffer | null>
     try {
         const response = await ai.models.generateContent({
             model: "gemini-2.5-flash-preview-tts",
-            contents: [{ parts: [{ text: `Say with a friendly and caring tone: ${text}` }] }],
+            contents: [{ parts: [{ text: `Say with a mysterious and calm tone: ${text}` }] }],
             config: {
                 responseModalities: [Modality.AUDIO],
                 speechConfig: {
