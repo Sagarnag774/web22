@@ -9,6 +9,10 @@ if (!API_KEY) {
 
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 
+// Create a single, shared AudioContext. It is exported so other parts
+// of the app (like the Chatbot component) can use it for playback.
+export const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
+
 let chat: Chat | null = null;
 
 const getChat = (): Chat => {
@@ -47,13 +51,12 @@ function decode(base64: string) {
 
 async function decodeAudioData(
   data: Uint8Array,
-  ctx: AudioContext,
   sampleRate: number,
   numChannels: number,
 ): Promise<AudioBuffer> {
   const dataInt16 = new Int16Array(data.buffer);
   const frameCount = dataInt16.length / numChannels;
-  const buffer = ctx.createBuffer(numChannels, frameCount, sampleRate);
+  const buffer = audioContext.createBuffer(numChannels, frameCount, sampleRate);
 
   for (let channel = 0; channel < numChannels; channel++) {
     const channelData = buffer.getChannelData(channel);
@@ -82,11 +85,9 @@ export const getTextToSpeech = async (text: string): Promise<AudioBuffer | null>
         
         const base64Audio = response.candidates?.[0]?.content?.parts?.[0]?.inlineData?.data;
         if (!base64Audio) return null;
-
-        const outputAudioContext = new (window.AudioContext || (window as any).webkitAudioContext)({ sampleRate: 24000 });
+        
         const audioBuffer = await decodeAudioData(
             decode(base64Audio),
-            outputAudioContext,
             24000,
             1,
         );

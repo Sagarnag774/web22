@@ -1,6 +1,6 @@
 
 import React, { useState, useRef, useEffect } from 'react';
-import { getPetBotResponse, getTextToSpeech } from '../services/geminiService';
+import { getPetBotResponse, getTextToSpeech, audioContext } from '../services/geminiService';
 import { ChatMessage } from '../types';
 
 const Chatbot: React.FC = () => {
@@ -24,7 +24,6 @@ const Chatbot: React.FC = () => {
 
     const playAudio = (audioBuffer: AudioBuffer) => {
         try {
-            const audioContext = new (window.AudioContext || (window as any).webkitAudioContext)();
             const source = audioContext.createBufferSource();
             source.buffer = audioBuffer;
             source.connect(audioContext.destination);
